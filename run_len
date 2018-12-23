@@ -1,0 +1,3 @@
+#!/bin/bash
+
+run "-v /home/josh/len/html/:/home/ -it" len
