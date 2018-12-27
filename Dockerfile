@@ -10,3 +10,4 @@ volume /home
 
 workdir /home/
 
+entrypoint node /home/main.js

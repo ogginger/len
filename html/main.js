@@ -3,6 +3,8 @@
 var requirejs = require("requirejs");
 var config = require("./require_config");
 
-require.config(config);
+requirejs.config(config);
 
-require([], function() {});
+requirejs([], function() {
+	console.log("main.js initialized successfully!");
+});
