@@ -1,0 +1,3 @@
+#!/bin/bash
+
+run "--name azuri_project -v /home/josh/azuri_project/html/:/home/ -it -p 80:80" azuri_project

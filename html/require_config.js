@@ -3,7 +3,9 @@
 module.exports = {
         nodeRequire: require,
         baseUrl: ".",
-        paths: {},
+        paths: {
+		"text": "lib/text"
+	},
         bundles: {},
 	suppress: {
 		nodeShim: true
