@@ -4,7 +4,10 @@ module.exports = {
         nodeRequire: require,
         baseUrl: ".",
         paths: {
-		"text": "lib/text"
+		"text": "lib/text",
+		"file": "lib/file.min",
+		"rsvp": "lib/rsvp.min",
+		"log": "lib/log.min"
 	},
         bundles: {},
 	suppress: {
