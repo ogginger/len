@@ -6,9 +6,11 @@ var config = require("./require_config");
 requirejs.config(config);
 
 requirejs([
+	"file",
 	"express",
 	"text!templates/index.html"
 ], function(
+	file,
 	express,
 	IndexTemplate
 ) {
@@ -17,6 +19,14 @@ requirejs([
 
 	app.get("/", function( request, response ) {
 		response.send( IndexTemplate );
+	});
+
+	app.get("/*", function( request, response ) {
+		file.get( __dirname + "/" + request.path ).then(function( Body ) {
+			response.send( Body );
+		}).catch(function( error ) {
+			response.send( error );
+		});
 	});
 
 	app.listen( 80, function() {
