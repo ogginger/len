@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop azuri_project
-docker rm azuri_project
+docker stop len
+docker rm len

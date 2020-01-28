@@ -15,7 +15,7 @@ requirejs([
 	console.log("main.js initialized successfully!");
 	var app = express();
 
-	app.get("/azuri", function( request, response ) {
+	app.get("/", function( request, response ) {
 		response.send( IndexTemplate );
 	});
 
