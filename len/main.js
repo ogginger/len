@@ -7,8 +7,7 @@ requirejs.config(config);
 
 requirejs([
 	"file",
-	"express",
-	"text!templates/index.html"
+	"express"
 ], function(
 	file,
 	express,
@@ -18,11 +17,13 @@ requirejs([
 	var app = express();
 
 	app.get("/", function( request, response ) {
-		response.send( IndexTemplate );
+		file.get( __dirname + "/html/index.html" ).then(function( Body ) {
+			response.send( Body );
+		});
 	});
 
 	app.get("/*", function( request, response ) {
-		file.get( __dirname + "/" + request.path ).then(function( Body ) {
+		file.get( __dirname + "/html/" + request.path ).then(function( Body ) {
 			response.send( Body );
 		}).catch(function( error ) {
 			response.send( error );
